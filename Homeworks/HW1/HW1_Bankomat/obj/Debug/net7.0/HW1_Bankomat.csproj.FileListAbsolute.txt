@@ -1,0 +1,15 @@
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\bin\Debug\net7.0\HW1_Bankomat.exe
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\bin\Debug\net7.0\HW1_Bankomat.deps.json
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\bin\Debug\net7.0\HW1_Bankomat.runtimeconfig.json
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\bin\Debug\net7.0\HW1_Bankomat.dll
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\bin\Debug\net7.0\HW1_Bankomat.pdb
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\HW1_Bankomat.csproj.AssemblyReference.cache
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\HW1_Bankomat.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\HW1_Bankomat.AssemblyInfoInputs.cache
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\HW1_Bankomat.AssemblyInfo.cs
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\HW1_Bankomat.csproj.CoreCompileInputs.cache
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\HW1_Bankomat.dll
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\refint\HW1_Bankomat.dll
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\HW1_Bankomat.pdb
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\HW1_Bankomat.genruntimeconfig.cache
+D:\WorkGit\Homeworks\HW1\HW1_Bankomat\obj\Debug\net7.0\ref\HW1_Bankomat.dll
