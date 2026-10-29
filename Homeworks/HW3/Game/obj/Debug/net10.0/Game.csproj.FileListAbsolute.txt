@@ -13,3 +13,11 @@ C:\Work\Homeworks\HW3\Game\obj\Debug\net10.0\refint\Game.dll
 C:\Work\Homeworks\HW3\Game\obj\Debug\net10.0\Game.pdb
 C:\Work\Homeworks\HW3\Game\obj\Debug\net10.0\Game.genruntimeconfig.cache
 C:\Work\Homeworks\HW3\Game\obj\Debug\net10.0\ref\Game.dll
+D:\WorkGit\Homeworks\HW3\Game\obj\Debug\net10.0\Game.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkGit\Homeworks\HW3\Game\obj\Debug\net10.0\Game.AssemblyInfoInputs.cache
+D:\WorkGit\Homeworks\HW3\Game\obj\Debug\net10.0\Game.AssemblyInfo.cs
+D:\WorkGit\Homeworks\HW3\Game\obj\Debug\net10.0\Game.csproj.CoreCompileInputs.cache
+D:\WorkGit\Homeworks\HW3\Game\obj\Debug\net10.0\Game.sourcelink.json
+D:\WorkGit\Homeworks\HW3\Game\obj\Debug\net10.0\Game.dll
+D:\WorkGit\Homeworks\HW3\Game\obj\Debug\net10.0\refint\Game.dll
+D:\WorkGit\Homeworks\HW3\Game\obj\Debug\net10.0\Game.pdb
