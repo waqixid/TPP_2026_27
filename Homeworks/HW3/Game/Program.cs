@@ -33,6 +33,7 @@
                 this.hp = hp;
                 this.power = power;
 
+                
                 count += 1;
                 id = Character.HowMany();
             }
