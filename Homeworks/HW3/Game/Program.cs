@@ -1,4 +1,4 @@
-﻿class Character
+﻿abstract class Character
 {
     private string name;
     private int id;
@@ -32,8 +32,10 @@
                 this.name = name;
                 this.hp = hp;
                 this.power = power;
+
                 
                 count += 1;
+                id = Character.HowMany();
             }
             else
             {
@@ -47,6 +49,7 @@
             this.hp = 1;
             this.power = 1;
             count += 1;
+            id = Character.HowMany();
         }
 
     }
@@ -55,17 +58,7 @@
         if (Hp>0) hp-=power;
     
     }
-    public virtual Character Attack(ref Character target)
-    {
-
-        Console.WriteLine(target);
-        Console.WriteLine();
-        target.TakeDamage(power);
-        Console.WriteLine($"Персонаж {target.Name} был атакован {Name} и потерял {Power} ХП");
-        Console.WriteLine();
-        Console.WriteLine(target);
-        return target;
-    }
+    public abstract void Attack(Character target);
     public bool IsAlive()
     {
         if (Hp > 0)
@@ -88,7 +81,7 @@
     {
         return count;
     }
-    protected static bool IsValidStats(int hp, int power)
+    private static bool IsValidStats(int hp, int power)
     {
         if (hp > 0 && power > 0) return true;
         else return false;
@@ -96,7 +89,7 @@
     public override bool Equals(object? obj)
     {
         if(obj ==null || !(obj is Character)) return false;
-        else return Name == ((Character) obj).Name;
+        else return ID == ((Character) obj).ID;
 
     }
     
@@ -108,15 +101,13 @@ class Player : Character
     {
         
     }
-    public override Enemy Attack(Enemy target)
+    public override void Attack(Character target)
     {
-         Console.WriteLine(target);
         Console.WriteLine();
         target.TakeDamage(Power);
         Console.WriteLine($"Враг {target.Name} был атакован игроком {Name} и потерял {Power} ХП");
+        Console.WriteLine(target);
         Console.WriteLine();
-         Console.WriteLine(target);
-        return target;
     }
     
     
@@ -127,65 +118,64 @@ class Enemy : Character
     {
         
     }
-    public override Player Attack(Player target)
+    public override void Attack(Character target)
     {
-        Console.WriteLine(target);
         Console.WriteLine();
         target.TakeDamage(Power);
         Console.WriteLine($"Игрок {target.Name} был атакован врагом {Name} и потерял {Power} ХП");
+        Console.WriteLine(target);
         Console.WriteLine();
-         Console.WriteLine(target);
-        return target;
     }
 
 }
 class Program
 {
     static void Main()
-    
+
     {
         string name; int hp, power;
-        Console.WriteLine("Сколько игроков вы хотите? ");
-        byte n = byte.Parse(Console.ReadLine());
-        Console.WriteLine("Сколько врагов вы хотите?");
-        byte m = byte.Parse(Console.ReadLine());
-        var characters = new List<Character>();
-        for (int i =0; i< n; i++)
+
+        Console.Write("Имя игрока: ");
+        name = Console.ReadLine();
+        Console.Write("ХП игрока: ");
+        hp = int.Parse(Console.ReadLine());
+        Console.Write("Сила атаки игрока: ");
+        power = int.Parse(Console.ReadLine());
+        Character player = new Player(name, hp, power);
+        Console.WriteLine($"Создан игрок: {name} (HP: {hp}, Урон: {power})");
+
+        Console.WriteLine();
+
+        Console.Write("Имя врага: ");
+        name = Console.ReadLine();
+        Console.Write("ХП врага: ");
+        hp = int.Parse(Console.ReadLine());
+        Console.Write("Сила атаки врага: ");
+        power = int.Parse(Console.ReadLine());
+        Character enemy = new Enemy(name, hp, power);
+        Console.WriteLine($"Создан враг: {name} (HP: {hp}, Урон: {power})");
+
+        Console.WriteLine();
+        Console.WriteLine("FIGHT!!!!!!!!!");
+        Console.WriteLine();
+
+        while (player.IsAlive() && enemy.IsAlive())
         {
-            name = Console.ReadLine();
-            hp = int.Parse(Console.ReadLine());
-            power = int.Parse(Console.ReadLine());
-            characters.Add(new Player(name, hp, power));
-            Console.WriteLine($"Создан игрок: {name} (HP: {hp}, Урон: {power})");
-        }
-        for (int i =0; i< m; i++)
-        {
-            name = Console.ReadLine();
-            hp = int.Parse(Console.ReadLine());
-            power = int.Parse(Console.ReadLine());
-            characters.Add(new Enemy(name, hp, power));
-            Console.WriteLine($"Создан враг: {name} (HP: {hp}, Урон: {power})");
-        }
-        foreach(Player player in characters)
-        {
-            foreach(Enemy enemy in characters)
+            player.Attack(enemy);
+            if (!enemy.IsAlive())
             {
-                player.Attack(ref enemy);
-                if (enemy.IsAlive() == false)
-                {
-                    Console.WriteLine($"Игрок {player.Name} победил врага {enemy.Name}!");
-                    characters.Remove(enemy);
-                    continue;
-                }
-                enemy.Attack(ref player);
-                if (player.IsAlive() == false)
-                {
-                    Console.WriteLine($"Враг {enemy.Name} победил игрока {player.Name}!");
-                    characters.Remove(player);
-                    break;
-                }
+                Console.WriteLine($"{enemy.Name} побежден {player.Name}! Слава {player.Name}");
+                break;
+            }
+            enemy.Attack(player);
+            if (!player.IsAlive())
+            {
+                Console.WriteLine($"{player.Name} побежден {enemy.Name}. Слава {enemy.Name}...");
+                break;
             }
         }
+        }
         
-    }
+        
+    
 }
